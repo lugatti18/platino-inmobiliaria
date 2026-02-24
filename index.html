@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Platino Inmobiliaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icon-192.png">
+    
+    <meta name="theme-color" content="#1e3a8a">
+</head>
+<body>
+
+<header>
+    <img src="assets/logo.png" class="logo">
+    <h1>Platino Inmobiliaria</h1>
+</header>
+
+<section class="form-section">
+    <h2>Nuevo Cliente</h2>
+
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="text" id="telefono" placeholder="Teléfono">
+
+    <select id="tipoConsulta">
+        <option value="">Tipo de Consulta</option>
+        <option value="Compra">Compra</option>
+        <option value="Venta">Venta</option>
+        <option value="Alquiler">Alquiler</option>
+    </select>
+
+    <input type="date" id="fechaSeguimiento">
+
+    <select id="clasificacion">
+        <option value="">Clasificación</option>
+        <option value="Propietario">Propietario</option>
+        <option value="Inquilino">Inquilino</option>
+        <option value="Inversor">Inversor</option>
+    </select>
+
+    <textarea id="observaciones" placeholder="Observaciones"></textarea>
+
+    <button onclick="agregarCliente()">Guardar Cliente</button>
+</section>
+
+<section class="list-section">
+    <h2>Lista de Clientes</h2>
+    <input type="text" id="busqueda" placeholder="Buscar por nombre..." onkeyup="buscarCliente()">
+    <div id="listaClientes"></div>
+</section>
+
+<script src="excel.js"></script>
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>
